@@ -1,0 +1,44 @@
+# .coderabbit.yaml
+language: "en"  # 或 "zh" 中文
+
+reviews:
+  # 自动审查设置
+  auto_review:
+    enabled: true
+    # 触发审查的时机
+    triggers:
+      - opened      # PR 打开时
+      - synchronize # 新提交时
+      - reopened    # PR 重新打开时
+
+  # 审查范围
+  scope:
+    # 文件类型限制
+    include:
+      - "**/*.js"
+      - "**/*.ts"
+      - "**/*.jsx"
+      - "**/*.tsx"
+      - "**/*.py"
+      - "**/*.java"
+      - "**/*.go"
+      - "**/*.rs"
+    # 排除的文件/目录
+    exclude:
+      - "**/node_modules/**"
+      - "**/dist/**"
+      - "**/build/**"
+      - "**/*.min.js"
+      - "**/*.bundle.js"
+
+  # 审查深度
+  depth: "detailed"  # basic | standard | detailed
+
+# AI 模型配置
+model:
+  name: "gpt-4"  # 使用的 AI 模型
+
+# 成本控制
+budget:
+  max_tokens_per_review: 8000
+  max_reviews_per_day: 50
