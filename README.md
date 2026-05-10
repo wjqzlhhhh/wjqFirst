@@ -7,3 +7,4 @@
 5. 远程服务器上载入镜像 `docker load -i peidi-ai.tar`
 6. 停止并移除旧的容器 `docker stop peidi-ai` `docker rm peidi-ai`
 7. 运行新的容器 `docker run --name peidi-ai -p 8091:8091 -d peidi-ai`
+
